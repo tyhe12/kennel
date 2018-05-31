@@ -20,9 +20,6 @@
 </template>
 
 <script>
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
-
 export default {
     name: 'image-carousel',
     model: {
@@ -49,9 +46,6 @@ export default {
             type: Number,
             default: 0
         }
-    },
-    components: {
-        'b-icon': Buefy.Icon
     },
     data() {
         const currentImageIndex = this.index;
@@ -191,7 +185,7 @@ $carousel-border: none;
     transition: opacity .5s ease-out;
 }
 .fade-enter, .fade-leave-to {
-  opacity: 0;
+  opacity: 0.2;
 }
 .fade-enter-to, .fade-leave {
   opacity: 1;

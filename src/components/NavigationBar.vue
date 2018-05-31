@@ -1,60 +1,62 @@
 <template>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-        <!-- navbar items, navbar burger... -->
+            <router-link class="navbar-item" to="/">
+                <img src="../assets/logo.png">
+            </router-link>
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <router-link class="navbar-item" to="/">
+                <router-link class="navbar-item navbar-item-title" to="/">
                     Home
                 </router-link>
 
                 <b-dropdown hoverable>
-                    <a class="navbar-item" slot="trigger">
+                    <a class="navbar-item navbar-item-title" slot="trigger">
                         <span>Our Dogs</span>
                         <b-icon icon="menu-down"></b-icon>
                     </a>
 
                     <b-dropdown-item >
-                        <router-link class="navbar-item" to="/dogs">
+                        <router-link class="navbar-item" to="/dogs/shiba">
                             Shibas
                         </router-link>
                     </b-dropdown-item>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
+                        <router-link class="navbar-item" to="/dogs/pom">
                             Poms
-                        </a>
+                        </router-link>
                     </b-dropdown-item>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
-                            Alaskan Hamalute
-                        </a>
+                        <router-link class="navbar-item" to="/dogs/malamute">
+                            Alaskan Malamute
+                        </router-link>
                     </b-dropdown-item>
                 </b-dropdown>
 
                 <b-dropdown hoverable>
-                    <a class="navbar-item" slot="trigger">
+                    <a class="navbar-item navbar-item-title" slot="trigger">
                         <span> Available Dogs</span>
                         <b-icon icon="menu-down"></b-icon>
                     </a>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
+                        <router-link class="navbar-item" to="/sales/puppies">
                             Puppies
-                        </a>
+                        </router-link>
                     </b-dropdown-item>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
+                        <router-link class="navbar-item" to="/sales/adults">
                             Adults
-                        </a>
+                        </router-link>
                     </b-dropdown-item>
                 </b-dropdown>
 
                 <b-dropdown hoverable>
-                    <a class="navbar-item" slot="trigger">
+                    <a class="navbar-item navbar-item-title" slot="trigger">
                         <span>How to Adopt</span>
                         <b-icon icon="menu-down"></b-icon>
                     </a>
@@ -73,28 +75,28 @@
                 </b-dropdown>
 
                 <b-dropdown hoverable>
-                    <a class="navbar-item" slot="trigger">
+                    <a class="navbar-item navbar-item-title" slot="trigger">
                         <span>About</span>
                         <b-icon icon="menu-down"></b-icon>
                     </a>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
+                        <router-link class="navbar-item" to="/about">
                             About Us
-                        </a>
+                        </router-link>
                     </b-dropdown-item>
 
                     <b-dropdown-item >
-                        <a class="navbar-item" target="_self">
+                        <router-link class="navbar-item" to="/contact">
                             Contact
-                        </a>
+                        </router-link>
                     </b-dropdown-item>
                 </b-dropdown>
             </div>
 
             <div class="navbar-end">
                 <b-dropdown hoverable position="is-bottom-left">
-                    <a class="navbar-item" slot="trigger">
+                    <a class="navbar-item navbar-item-title" slot="trigger">
                         <span>More</span>
                         <b-icon icon="menu-down"></b-icon>
                     </a>
@@ -123,19 +125,20 @@
 </template>
 
 <script>
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
-
 export default {
-    name: 'NavigationBar',
-    components: {
-        'b-dropdown': Buefy.Dropdown,
-        'b-dropdown-item': Buefy.DropdownItem,
-        'b-icon': Buefy.Icon
-    }
+    name: 'navigation-bar'
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+@import '../assets/constants.scss';
+$strong-weight: 600;
 
+.navbar {
+    background-color: $kennel-background-color;
+
+    .navbar-item.navbar-item-title {
+        font-weight: $strong-weight;
+    }
+}
 </style>
