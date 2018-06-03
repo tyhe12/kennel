@@ -37,17 +37,13 @@ export default {
 footer {
     background-color: $kennel-background-color;
     height: 100%;
-    margin-top: $size-0;
+    margin-top: $size-1;
     padding-bottom: $size-1;
     position: relative;
 
     .icons {
         display: flex;
         justify-content: space-around;
-    }
-    
-    .sitemap {
-        padding-left: $size-1;
     }
 }
 </style>

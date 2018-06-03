@@ -14,23 +14,23 @@
 		<section class="section is-content">
 			<div class="container">
 				<div class="tile is-ancestor">
-					<div class="tile is-4">
+					<div class="tile is-4 home-page-card">
 					<!-- Add content or other tiles -->
-						<image-card class="home-page-card" src="https://bulma.io/images/placeholders/640x480.png">
+						<image-card src="https://bulma.io/images/placeholders/640x480.png">
 							Our Shibas
 						</image-card>
 					</div>
 					
-					<div class="tile is-4">
+					<div class="tile is-4 home-page-card">
 					<!-- Add content or other tiles -->
-						<image-card class="home-page-card" src="https://bulma.io/images/placeholders/640x480.png">
+						<image-card src="https://bulma.io/images/placeholders/640x480.png">
 							Our Poms
 						</image-card>
 					</div>
 
-					<div class="tile is-4">
+					<div class="tile is-4 home-page-card">
 					<!-- Add content or other tiles -->
-						<image-card class="home-page-card" src="https://bulma.io/images/placeholders/640x480.png">
+						<image-card src="https://bulma.io/images/placeholders/640x480.png">
 							Our Alaskan Malamutes
 						</image-card>
 					</div>
@@ -78,7 +78,7 @@ export default {
 	padding-top: 0;
 
 	.home-page-card {
-		margin: 0 $size-6;
+		padding: $size-6;
 	}
 }
 </style>

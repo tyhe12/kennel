@@ -9,9 +9,7 @@
 		</section>
 
         <section class="section is-content">
-            <div class="container">
-                <modal-carousel :images="breed.images" :modal-images="breed.images" width="640px" height="480px"></modal-carousel>
-            </div>
+            <modal-carousel :images="breed.images" :modal-images="breed.images"></modal-carousel>
         </section>
         
     </div>

@@ -1,12 +1,12 @@
 <template>
-    <div class="modal-carousel-container">
-        <div class="modal-carousel">
-            <image-carousel :width="width" :height="height" :images="images" @container-click="show" v-model="index"></image-carousel>
+    <section class="section modal-carousel-container">
+        <div class="container modal-carousel">
+            <image-carousel :images="images" @container-click="show" v-model="index"></image-carousel>
             <b-modal :active.sync="showModal">
                 <image-carousel :images="images" v-model="index"></image-carousel>
             </b-modal>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -31,20 +31,12 @@ export default {
             default() {
                 return [];
             }
-        },
-        width: {
-            type: [String, Number],
-            default: '100%'
-        },
-        height: {
-            type: [String, Number],
-            default: '100%'
-        },
+        }
     },
     data() {
         return {
             showModal: false,
-            index: 0
+            // index: 0
         }
     },
     methods: {
@@ -61,9 +53,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/constants.scss';
+
 .modal-carousel-container {
-    display: flex;
-    justify-content: center;
+    padding-top: 0;
 }
 </style>
 

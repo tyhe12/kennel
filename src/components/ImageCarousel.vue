@@ -1,9 +1,11 @@
 <template>
-    <div :style="[dimensions]" class='carousel'>
+    <section class='section carousel'>
         <div class='carousel-container' @click="onContainerClick">
             <transition name="fade" mode="out-in">
                 <div class='carousel-item' :key="index" v-if="activeItem(index)" v-for="(image, index) in images">
-                    <img class="background" :src="image.src" :alt="image.alt" :width="image.height" :height="image.width" />
+                    <figure class="image is-4by3">
+                        <img class="background" :src="image.src" :alt="image.alt" />
+                    </figure>
                     <div class="title">{{image.title}}</div>
                 </div>
             </transition>
@@ -16,7 +18,7 @@
                 <b-icon icon="chevron-right"></b-icon>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -27,14 +29,6 @@ export default {
         event: 'change'
     },
     props: {
-        width: {
-            type: [String, Number],
-            default: '100%'
-        },
-        height: {
-            type: [String, Number],
-            default: '100%'
-        },
         images: {
             type: Array,
             required: true,
@@ -64,11 +58,6 @@ export default {
         },
         currentImage() {
             return this.images[this.currentImageIndex];
-        }
-    },
-    watch: {
-        index(value) {
-            this.currentImageIndex = value;
         }
     },
     methods: {
@@ -103,9 +92,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$white: hsl(0, 0%, 100%);
-$text: hsl(0, 0%, 29%);
-$size-7: 0.75rem;
+@import '../assets/constants.scss';
+
 $carousel-nav-background: rgba($white, 0.7) !default;
 $carousel-nav-color: $text !default;
 $carousel-title-background: rgba($white, 0.6) !default;
@@ -115,6 +103,7 @@ $carousel-border: none;
 .carousel {
     position: relative;
     overflow: hidden;
+    padding: 0;
 
     .carousel-container{
         border: $carousel-border;

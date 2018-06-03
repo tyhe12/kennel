@@ -100,9 +100,5 @@ export default {
 .available-dogs {
     padding-top: 0;
 }
-
-.tile-card {
-    margin: 0 1rem;
-}
 </style>
 

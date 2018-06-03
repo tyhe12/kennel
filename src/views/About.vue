@@ -1,5 +1,5 @@
 <template>
-	<section class="section is-fluid">
+	<section class="section container is-fluid">
 		<div class="about content is-medium">
 			<h1 class="title">About J.A.K Kennel</h1>
 
